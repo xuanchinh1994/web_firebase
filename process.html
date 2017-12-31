@@ -1,0 +1,465 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<style type="text/css">
+centerImage {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+body {
+    margin: 0;
+}
+
+#over img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+
+</style>
+
+<meta charset="utf-8">
+<title>Truong Dai Hoc Su Pham Ki Thuat</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+
+<link rel="stylesheet" type="text/css" href="css/plugins/flexslider/flexslider.css">
+<link rel="stylesheet" type="text/css" href="css/cubeportfolio.min.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/skins/default.css">
+
+
+<!-- update the version number as needed -->
+    <script defer src="/__/firebase/4.8.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/4.8.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/4.8.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/4.8.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/4.8.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
+
+<script type="text/javascript">
+    // Hàm này có tác dụng chuyển những số bé hơn 10 thành dạng 01, 02, 03, ...
+    function checkTime(i) 
+    {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+
+    // Hàm khởi tạo đồng hồ
+    function startTime() 
+    {
+        // Lấy Object ngày hiện tại
+        var today = new Date();
+     
+        // Giờ, phút, giây hiện tại
+        var h = today.getHours();
+        var p = today.getMinutes();
+        var s = today.getSeconds();
+        var d = today.getDate();
+        var m = today.getMonth() + 1;
+        var y = today.getFullYear();
+     
+        // Chuyển đổi sang dạng 01, 02, 03
+        p = checkTime(p);
+        s = checkTime(s);
+     
+        // Ghi ra trình duyệt
+        document.getElementById('timer').innerHTML = d + "/" + m + "/" + y + " - " + h + ":" + p + ":" + s;
+     
+        // Dùng hàm setTimeout để thiết lập gọi lại 0.5 giây / lần
+        var t = setTimeout(function() {
+            startTime();
+        }, 500);
+    }
+</script>
+
+</head>
+<body onload="startTime()">
+
+<div class="wrapper">
+<header>
+
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#featured"><img src="images/iconlogin3.png" height="52" width="199"></a>
+        </div>
+        <div class="navbar-collapse collapse ">
+            <div class="nav-mobile" style="display: none;"> Mobile Dropdown <a href="http://www.jqueryscript.net/menu/">Menu</a></div>
+                <ul class="nav navbar-nav" id="menu">
+                    <li >
+                        <a href="#featured" data-close-others="false">Home</a>
+                    </li>
+                   <!--  <li>
+                        <a href="#intro" data-close-others="false">About</a>
+                    </li> -->
+                    <li>
+                        <a href="#products" data-close-others="false">Work</a>
+                    </li>
+                    <!-- <li>
+                        <a href="#contact" data-close-others="false">Contact</a>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </div>                                                  
+</header>   
+
+<div id="featured">
+    <img src="images/image2.jpg" height="500px" width="100%" >
+</div>
+
+
+<div>
+    <section id="content">
+
+    <!-- THÔNG TIN GIỚI THIỆU BẢN THÂN OR PROJECT -->
+    <!-- introduction -->
+   <!--  <div class="container" id="intro">
+    <br>
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <h3 class="heading" style="text-align: center;">Giới Thiệu</h3>
+                <a><img src="images/img3.jpg" style="width: 100px;"><p style="text-align: justify;"><br></p></a>
+            </div>
+
+        </div>
+    </div> -->
+    <!-- end introduction -->
+        <!-- Điều Khiển Hệ Thống -->
+        <div class="container marginbot50" id="products">
+        <br>
+        <div class="row">
+        <h3 class="heading" style="text-align: center;">Điều Khiển Hệ Thống</h3>
+            <div class="col-lg-12">
+                <div class="col-lg-6">
+                    <img  name="image" class="img-rounded"  alt="Cinque Terre" src="images/sun.jpg" height="250px" width="100%"><br/>
+                </div>
+                <div class="col-lg-6">
+                    <div class="jumbotron">
+                        <h1 id="temp" style="text-align:center"> 37 &ordm;C</h1> 
+                        <p style="text-align:center" id="timer"></p> 
+                     </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div id="over" class="col-lg-3 " >
+                    <h4 style="text-align:center" >LED</h4>
+                    <img src="images/lampout.png" style="width: 60px; " ><br/>
+                    <div class="col-lg-5">&nbsp; </div><input id="toggle-led" type="checkbox" data-toggle="toggle"  >
+                </div>
+                <!-- <div class="col-lg-2">
+                    <h4>Đèn Nhà</h4>
+                    <img src="images/lampin.png" style="width: 60px;"><br/>
+                    <button type="button" id="btnDenNha" class="btn btn-success btn-lg">Bật</button>
+                </div> -->
+                <div id="over" class="col-lg-3">
+                    <h4 style="text-align:center" >DOOR</h4>
+                    <img src="images/door.png" style="width: 60px; "><br/>
+                    <div class="col-lg-5">&nbsp; </div><input id="toggle-door" type="checkbox" data-toggle="toggle">
+                </div>
+                <!-- <div class="col-lg-2">
+                    <h4>Quạt</h4>
+                    <img src="images/fan.png" style="width: 60px;"><br/>
+                    <button type="button" id="btnQuat" class="btn btn-success btn-lg">Bật</button>
+                </div> -->
+                <!-- <div class="col-lg-2">
+                    <h4>Gas</h4>
+                    <img src="images/gas.png" style="width: 60px;"><br/>
+                    <button type="button" id="btnGas" class="btn btn-success btn-lg">Bật</button>
+                </div> -->
+                <div id="over" class="col-lg-3">
+                    <h4 style="text-align:center" id="theft_text" >GUEST</h4>
+                    <img src="images/theft.png" style="width: 70px;"><br/>
+                    <div class="col-lg-5">&nbsp; </div><input id="toggle-theft" type="checkbox" data-toggle="toggle">
+                </div>
+                <div id="over" class="col-lg-3">
+                    <h4 style="text-align:center" id="waring_text" >Bells have guest</h4>
+                    <img src="images/ring.png" style="width: 70px;"><br/>
+                    <div class="col-lg-5">&nbsp; </div><input id="toggle-warning" type="checkbox" data-toggle="toggle">
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+
+
+        <!-- divider -->
+        <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="solidline">
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- end divider -->
+
+                <!-- divider -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="solidline">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end divider -->
+
+        <!-- ĐÂY LÀ FORM LIÊN LẠC, CONTACT -->
+
+        <!-- contact -->
+        <!-- <div class="container" id="contact">
+        <div class="row">
+            <h3 class="heading" style="text-align: center;">FOLLOW ME ON FACEBOOK @NGUYENVANDANH <a href="https://www.facebook.com/nguyen.welling" target="_blank"><img src="images/facebook.png" alt=""></a></h3>
+            
+                
+            </div>
+        </div> -->
+
+    </section>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBN9XGKBpxz-GZI4ecB8emrtIW0e8EVUpU",
+    authDomain: "smart-anti-theft-device.firebaseapp.com",
+    databaseURL: "https://smart-anti-theft-device.firebaseio.com",
+    projectId: "smart-anti-theft-device",
+    storageBucket: "smart-anti-theft-device.appspot.com",
+    messagingSenderId: "23645736268"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script>
+    // Update led
+    var update_led = firebase.database().ref("led/");
+
+    update_led.on("child_changed", function(data) {
+                                                    if ( data.val() == 0 ) { $('#toggle-led').prop('checked', true).change();}
+                                                    if ( data.val() == 1 ) { $('#toggle-led').prop('checked', false).change();}
+                                                    // console.log( data.val()); 
+                                                    });
+    // Update door
+    var update_door = firebase.database().ref("door/");
+
+    update_door.on("child_changed", function(data) {
+                                                    if ( data.val() == 0 ) { $('#toggle-door').prop('checked', true).change();}
+                                                    if ( data.val() == 1 ) { $('#toggle-door').prop('checked', false).change();}
+                                                    <!-- console.log( status); -->
+                                                    });
+    // Update theft
+    var update_theft = firebase.database().ref("theft/");
+
+    update_theft.on("child_changed", function(data) {
+                                                    if ( data.val() == 0 ) { $('#toggle-theft').prop('checked', true).change();}
+                                                    if ( data.val() == 1 ) { $('#toggle-theft').prop('checked', false).change();}
+                                                    <!-- console.log( status); -->
+                                                    });
+
+    // Update warning
+    var update_warning = firebase.database().ref("warning/");
+
+    update_warning.on("child_changed", function(data) {
+                                                    if ( data.val() == 0 ) { $('#toggle-warning').prop('checked', true).change();}
+                                                    if ( data.val() == 1 ) { $('#toggle-warning').prop('checked', false).change();}
+                                                    
+                                                    <!-- console.log( status); -->
+                                                    });
+    
+</script>
+
+<script type="text/javascript">
+    // Start display led
+    var check_led = firebase.database().ref("led/").child("led_1");
+
+    check_led.on("value", function(snapshot) {
+        if ( snapshot.val() == 0 ) { $('#toggle-led').prop('checked', true).change();}
+        if ( snapshot.val() == 1 ) { $('#toggle-led').prop('checked', false).change();}
+        // console.log(snapshot.val())
+    });
+
+    // Start display door
+    var check_door = firebase.database().ref("door/").child("door_1");
+
+    check_door.on("value", function(snapshot) {
+        if ( snapshot.val() == 0 ) { $('#toggle-door').prop('checked', true).change();}
+        if ( snapshot.val() == 1 ) { $('#toggle-door').prop('checked', false).change();}
+        // console.log(snapshot.val())
+    });
+
+    // Start display theft
+    var check_theft = firebase.database().ref("theft/").child("theft_1");
+
+    check_theft.on("value", function(snapshot) {
+        if ( snapshot.val() == 0 ) { $('#toggle-theft').prop('checked', true).change();}
+        if ( snapshot.val() == 1 ) { $('#toggle-theft').prop('checked', false).change();}
+        // console.log(snapshot.val())
+    });
+
+    // Start display theft
+    var check_warning = firebase.database().ref("warning/").child("warning_1");
+
+    check_warning.on("value", function(snapshot) {
+        if ( snapshot.val() == 0 ) { $('#toggle-warning').prop('checked', true).change();}
+        if ( snapshot.val() == 1 ) { $('#toggle-warning').prop('checked', false).change();}
+        // console.log(snapshot.val())
+    });
+</script>
+
+<script>
+    // Event toogle led
+    $(function() { 
+        var checked;
+        $('#toggle-led').change(function() {
+            if ($(this).prop('checked') == true) { 
+                firebase.database().ref("led/").child("led_1").set(0);
+                // console.log(0); 
+            }
+            if ($(this).prop('checked') == false) { 
+                firebase.database().ref("led/").child("led_1").set(1);
+                // console.log(1); 
+            }
+        })
+    });
+
+    // Event toogle door
+    $(function() { 
+        $('#toggle-door').change(function() {
+            if ($(this).prop('checked') == true) { 
+                firebase.database().ref("door/").child("door_1").set(0);
+                // console.log(0); 
+            }
+            if ($(this).prop('checked') == false) { 
+                firebase.database().ref("door/").child("door_1").set(1);
+                // console.log(1); 
+            }
+        })
+    });
+
+    // Event toogle theft
+    $(function() { 
+        $('#toggle-theft').change(function() {
+            if ($(this).prop('checked') == true) { 
+                firebase.database().ref("theft/").child("theft_1").set(0);
+                // console.log(0); 
+            }
+            if ($(this).prop('checked') == false) { 
+                firebase.database().ref("theft/").child("theft_1").set(1);
+                // console.log(1); 
+            }
+        })
+    });
+
+    // Event toogle warning
+    $(function() { 
+        $('#toggle-warning').change(function() {
+            if ($(this).prop('checked') == true) { 
+                firebase.database().ref("warning/").child("warning_1").set(0);
+                // console.log(0); 
+            }
+            if ($(this).prop('checked') == false) { 
+                firebase.database().ref("warning/").child("warning_1").set(1);
+                // console.log(1); 
+            }
+        })
+    });
+</script>
+
+<script type="text/javascript">
+    var d = new Date();
+    var dh;
+    dh = d.getHours();
+
+    dh = checkTime(dh)+1;
+    
+  
+    if(dh > 18 & dh < 23){
+        document.images['image'].src ='images/moon.gif';
+        document.getElementById("theft_text").innerHTML = "THEFT";
+        document.getElementById("warning_text").innerHTML = "Warning";
+    }
+    if(dh > 0 & dh < 6){
+        document.images['image'].src ='images/moon.gif';
+        document.getElementById("theft_text").innerHTML = "THEFT";
+        document.getElementById("warning_text").innerHTML = "Warning";
+    }
+
+</script>
+
+<script>
+    var update_temp = firebase.database().ref("temp/");
+
+    update_temp.on("child_changed", function(data) {
+                                                    var nd = data.val();
+                                                    document.getElementById("temp").innerHTML = nd +"&ordm;C";
+                                                    <!-- console.log( status); -->
+                                                    });
+    
+</script>
+
+<script type="text/javascript">
+    var check_temp = firebase.database().ref("temp/").child("temp");
+
+    check_temp.on("value", function(snapshot) {
+        var nd_1 = snapshot.val();
+        document.getElementById("temp").innerHTML = nd_1 + "&ordm;" +"C";
+        // console.log(snapshot.val())
+    });
+</script>
+
+
+
+<script src="js/modernizr.custom.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/jquery.flexslider-min.js"></script>
+<script src="js/jquery.appear.js"></script>
+<script src="js/stellar.js"></script>
+<script src="js/jquery.cubeportfolio.min.js"></script>
+<script src="js/google-code-prettify/prettify.js"></script>
+<script src="js/animate.js"></script>
+<script src="js/jquery.navScroll.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+
+
+<script type="text/javascript">
+    $('.navbar').navScroll({
+      mobileDropdown: true,
+      mobileBreakpoint: 768
+    });
+
+    $('.navbar').on('click', '.nav-mobile', function (e) {
+      e.preventDefault();
+      $('.nav ul').slideToggle('fast');
+    });
+</script>
+</body>
+</html>
